@@ -7,20 +7,15 @@
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 
-    
-    
-    
-
 <script type="text/javascript" charset="utf-8">
-    function openMe()
+    function openMe(url)
 	{
 		
-		alert('hej');
-		
-        var ref = window.open('http://apache.org', '_blank', 'location=yes');
+        var ref = window.open(url, '_blank', 'location=yes');
         ref.addEventListener('loadstart', function() { alert('start: ' + event.url); });
         ref.addEventListener('loadstop', function() { alert('stop: ' + event.url); });
         ref.addEventListener('exit', function() { alert(event.type); });
+		return false;
     };
 </script>
 
@@ -31,8 +26,16 @@
 
 <body>
 
-<span onclick='openMe();'>HighstakesDB</span>
+<div style='text-align:center;'>
+	
+    <br /><br />
+    
+	<span onclick='openMe('http://www.highstakesdb.com');return false;'><h1>HighstakesDB</h1></span>
 
-<br /><br />
+	<br /><br /><br /><br />
+
+	<span onclick='openMe('http://www.fyrasgard.se');return false;'><h1>Fyrås Gård</h1></span>
+    
+</div>
 </body>
 </html>
